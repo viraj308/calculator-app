@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table class="calculator">
+            <tr>
+                <td colspan="3"><input type="text" class="display" id="in1"></td>
+                <td><input type="button" class="button" value="C" onclick="rem()"></td>
+                <td rowspan="2"><button class="red" onclick="del()">AC</button></td>
+            </tr>
+            <tr>
+                <td><input type = "button" value = "1" class=" button " onclick="entry('1')"></td>
+                <td><input type = "button" value = "2" class=" button " onclick="entry('2')"></td>
+                <td><input type = "button" value = "3" class=" button " onclick="entry('3')"></td>
+                <td><input type = "button" value = "/" class=" button " onclick="entry('/')"></td>
+                
+            </tr>
+            <tr>
+                <td><input type = "button" value = "4" class=" button " onclick="entry('4')"></td>
+                <td><input type = "button" value = "5" class=" button " onclick="entry('5')"></td>
+                <td><input type = "button" value = "6" class=" button " onclick="entry('6')"></td>
+                <td><input type = "button" value = "-" class=" button " onclick="entry('-')"></td>
+                <td><input type="button"value = "%" class="button" onclick="entry('%')"></td>
+                 
+            </tr>
+            <tr>
+                <td><input type = "button" value = "7" class=" button " onclick="entry('7')"></td>
+                <td><input type = "button" value = "8" class=" button " onclick="entry('8')"></td>
+                <td><input type = "button" value = "9" class=" button " onclick="entry('9')"></td>
+                <td><input type = "button" value = "+" class=" button " onclick="entry('+')"></td>
+                
+            </tr>
+            <tr>
+                <td><input type = "button" value = "." class=" button " onclick="entry('.')"></td>
+                <td><input type = "button" value = "0" class=" button " onclick="entry('0')"></td>
+                <td><input type = "button" value = "=" class=" button " onclick="ans()"></td>
+                <td><input type = "button" value = "*" class=" button " onclick="entry('*')"></td>
+                
+            </tr>
+        </table>
+        <script>
+            function entry(val) {
+                document.getElementById("in1").value+=val;
+            }
+            function ans() {
+                var x = document.getElementById("in1").value;
+                var y = eval(x);
+                document.getElementById("in1").value = y; 
+            }
+            function del() {
+                document.getElementById("in1").value = "";
+
+            }
+            function rem() {
+                var st = document.getElementById("in1").value;
+                var stl = st.slice(0,st.length-1);
+                document.getElementById("in1").value = stl;
+            } 
+        </script>
+    </body>
+</html>
